@@ -3,12 +3,16 @@ package model;
 import java.time.Duration;
 import java.time.LocalTime;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Evento extends Extensao {
 	private int maxParticipantes;
 	private LocalTime horaDeInicio;
 	private LocalTime horadeTermino;
 	private double cargaHoraria;
-
+	private Local local;
+	
 	public Evento() {
 	}
 
@@ -47,6 +51,14 @@ public class Evento extends Extensao {
 		Duration duracao = Duration.between(horaDeInicio, horadeTermino);
 		long cargaHorariaEmHoras = duracao.toMinutes()/60;
 		this.cargaHoraria = cargaHorariaEmHoras;
+	}
+
+	public Local getLocal() {
+		return local;
+	}
+
+	public void setLocal(Local local) {
+		this.local = local;
 	}
 
 }
