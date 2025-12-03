@@ -1,5 +1,7 @@
 package model;
 
+//Descrição dada pela  universidade sobre cursos: Os cursos de extensão universitária são ações pedagógicas de caráter teórico e/ou, prático, com participação de forma presencial, semipresencial ou a distância, com planejamento, organização e critérios de avaliação definidos.
+
 import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalTime;
@@ -16,7 +18,8 @@ public class Curso extends Extensao {
 	private String nivel;    //basico, intermediario, avançaado...
 	private int vagas;
 	private String duracaoTotal; // em meses
-	private double cargaHoraria; // semanal
+	private double cargaHorariaSemanal; // semanal em horas
+	private String modalidade; // teorico, pratico, teorico-pratico.
 	
 	public Curso() {
 	}
@@ -73,13 +76,13 @@ public class Curso extends Extensao {
 	}
 
 	public double getCargaHoraria() {
-		return cargaHoraria;
+		return cargaHorariaSemanal;
 	}
 
 	private void setCargaHoraria() {
 		Duration duracao = Duration.between(horaDeInicio, horadeTermino);
 		long horasDeAula = duracao.toMinutes()/60;
-		this.cargaHoraria = diasdaSemana.size() * horasDeAula;
+		this.cargaHorariaSemanal = diasdaSemana.size() * horasDeAula;
 	}
 
 	public Local getLocal() {
@@ -88,6 +91,14 @@ public class Curso extends Extensao {
 
 	public void setLocal(Local local) {
 		this.local = local;
+	}
+
+	public String getModalidade() {
+		return modalidade;
+	}
+
+	public void setModalidade(String modalidade) {
+		this.modalidade = modalidade;
 	}
 
 }

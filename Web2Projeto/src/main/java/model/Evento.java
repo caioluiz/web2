@@ -1,5 +1,7 @@
 package model;
 
+///Descrição dada pela  universidade sobre eventos: Os eventos de extensão são ações que implicam na apresentação, disseminação e, ou, exibição pública, livre ou com público específico do conhecimento ou produto cultural, artístico, esportivo, científico ou tecnológico desenvolvido, conservado ou reconhecido pela Universidade. 
+
 import java.time.Duration;
 import java.time.LocalTime;
 
